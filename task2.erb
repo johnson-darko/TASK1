@@ -1,0 +1,18 @@
+#TODO
+#match objects are repeated objects
+#counting means get an integer
+#get a hash from the array in a descending order(higher to lowest)
+p "listing all items..."
+p items =   ["bed", "pillow","bed", "pillow", "table", "bed", "pillow", "door", "light", "minibar", "light", "chair", "chair", "light", "light", "hairdryer", "soap"]
+
+#get the number of elemenets in the items and the unique items
+p "There are #{items.uniq.count} unique matching items from #{items.count} total items"
+
+p "listing key value pairs of items..."
+#Return a hash containing  items with its values
+p hashes = items.tally
+
+p "Changing to hash in reserve...."
+
+#sort by key and value with the value in reverse(for descending order) to get an array of arrays and change back to hash
+p hashes.sort_by {|key,value| value}.reverse.to_h
